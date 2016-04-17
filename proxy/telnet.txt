@@ -1,0 +1,64 @@
+rhs telnet sequence: ff fd f6 IAC DO AYT
+lhs telnet sequence: ff fc f6 IAC WONT AYT
+rhs telnet sequence: ff fb 0 IAC WILL 0 binary transmission
+rhs telnet sequence: ff fd 0 IAC DO 0 binary transmission
+ff fb 1 IAC WILL 1 echo
+ff fb 3 IAC WILL 3 suppress go ahead
+ff fc 5 IAC WONT 5 status
+ff fe 18 IAC DONT 18* terminal type
+ff fe 1f IAC DONT 1f* negotiate about window size
+ff fe 20 IAC DONT 20 terminal speed
+ff fe 21 IAC DONT 21 remote flow control
+ff fe 22 IAC DONT 22 linemode
+ff fc 27 IAC WONT 27 new environment
+ff fe 27 IAC DONT 27 new environment
+ff fc 24 IAC WONT 24 environment
+ff fe 24 IAC DONT 24 environment
+lhs telnet sequence: ff fd 0 IAC DO 0 binary transmission
+lhs telnet sequence: ff fb 0 IAC WILL 0 binary transmission
+ff fd 1 IAC DO 1 echo
+ff fe 3 IAC DONT 3 suppress go ahead
+ff fe 5 IAC DONT 5 status
+ff fc 20 IAC WONT 20 terminal speed
+ff fc 21 IAC WONT 21 remote flow control
+ff fc 22 IAC WONT 22 linemode
+ff fe 27 IAC DONT 27 new environment
+ff fc 27 IAC WONT 27 new environment
+ff fe 24 IAC DONT 24 environment
+ff fc 24 IAC WONT 24 environment
+
+
+
+F0      SE                  240    End of subnegotiation parameters.
+F1      NOP                 241    No operation.
+F2      Data Mark           242    The data stream portion of a Synch.
+                                 This should always be accompanied
+                                 by a TCP Urgent notification.
+F3      Break               243    NVT character BRK.
+F4      Interrupt Process   244    The function IP.
+F5      Abort output        245    The function AO.
+F6      Are You There       246    The function AYT.
+F7      Erase character     247    The function EC.
+F8      Erase Line          248    The function EL.
+F9      Go ahead            249    The GA signal.
+FA      SB                  250    Indicates that what follows is
+                                 subnegotiation of the indicated
+                                 option.
+FB      WILL (option code)  251    Indicates the desire to begin
+                                 performing, or confirmation that
+                                 you are now performing, the
+                                 indicated option.
+FC      WON'T (option code) 252    Indicates the refusal to perform,
+                                 or continue performing, the
+                                 indicated option.
+FD      DO (option code)    253    Indicates the request that the
+                                 other party perform, or
+                                 confirmation that you are expecting
+                                 the other party to perform, the
+                                 indicated option.
+FE      DON'T (option code) 254    Indicates the demand that the
+                                 other party stop performing,
+                                 or confirmation that you are no
+                                 longer expecting the other party
+                                 to perform, the indicated option.
+FF      IAC                 255    Data Byte 255.
